@@ -18,14 +18,14 @@ export default function Register() {
     e.preventDefault()
     const {name, email, password} = data
     try {
-      const {data} = await axios.post('/register', {
+      const {data} = await axios.post('https://mern-frontend-henna-three.vercel.app/register', {
         name, email, password
       })
       if (data.error) {
         toast.error(data.error)
       } else {
         setData({})
-        navigate('/login')
+        navigate('https://mern-frontend-henna-three.vercel.app/login')
         toast.success('Успешная регистрация')
       }
     } catch (error) {

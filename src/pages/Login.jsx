@@ -15,7 +15,7 @@ export default function Login() {
     e.preventDefault()
     const {email, password} = data
     try {
-      const {data} = await axios.post('/login', {
+      const {data} = await axios.post('https://mern-frontend-henna-three.vercel.app/login', {
         email,
         password
       })
@@ -23,7 +23,7 @@ export default function Login() {
         toast.error(data.error)
       } else {
         setData({})
-        navigate('/dashboard')
+        navigate('https://mern-frontend-henna-three.vercel.app/dashboard')
         toast.success('Вы успешно вошли в систему')
       }
     } catch (error) {
